@@ -1,5 +1,10 @@
+import { useHistory } from "react-router-dom";
+
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Button, Card } from "@material-ui/core";
+
+import usePreference from '../hooks/usePreference'
+import MercadoLibre from '../services/MercadoLibre'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +44,35 @@ const Prices = ({ prices }) => {
 
 const Product = ({ product }) => {
   const classes = useStyles();
+  const { setPreference } = usePreference();
+  const history = useHistory();
+
+  const onBuyButton = () => {
+    const _mercadoLibre = new MercadoLibre();
+    const items =  [
+        {
+          title: product.title,
+          description: product.title,
+          picture_url: product.thumbnail,
+          category_id: product.category_id,
+          unit_price: product.price,
+          currency_id: product.currency_id,
+          quantity: 1
+        }
+      ];
+    const payer = {
+      id: 471923173,
+      nickname: "APRO",
+      email: "fedevpe@gmail.com"
+    }
+    const makeTheOrder = async () => {
+      const response = await _mercadoLibre.createPreference({items, payer});
+      setPreference(response);
+      history.push("/order");
+    }
+    makeTheOrder();
+  }
+
   return (
     <Card className={classes.root}>
       <img
@@ -48,7 +82,8 @@ const Product = ({ product }) => {
       />
       {product.prices.prices && <Prices prices={product.prices.prices} />}
       <Typography className={classes.title} variant="body1">{product.title}</Typography>
-      <Button variant="contained" color="primary" fullWidth>Comprar</Button>
+      <Button variant="contained" color="primary" fullWidth onClick={onBuyButton}>Realizar pedido</Button>
+
     </Card>
   );
 };

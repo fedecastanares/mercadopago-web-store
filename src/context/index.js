@@ -1,12 +1,15 @@
 import CategoryProvider from './CategoryContext'
 import ProductsProvider from './ProductsContext'
+import PreferenceProvider from './PreferenceContext'
 
 const ContextBundle = ({children}) => {
     return ( 
         <>
         <CategoryProvider>
             <ProductsProvider>
-                {children}
+                <PreferenceProvider>
+                    {children}
+                </PreferenceProvider>
             </ProductsProvider>
         </CategoryProvider>
         </>

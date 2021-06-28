@@ -12,6 +12,11 @@ export class MercadoLibre {
         return response.data
     }
 
+    async createPreference(preference) {
+        const response = await axios.post(`http://localhost:4000/buy`, preference);
+        return response.data
+    }
+
 }
 
 export default MercadoLibre;

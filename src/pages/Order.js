@@ -16,8 +16,6 @@ const Order = () => {
     }
   }, [history, preference]);
 
-  console.log(preference);
-
   return (
     <>
       <Grid

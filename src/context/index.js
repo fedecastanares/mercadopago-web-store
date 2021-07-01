@@ -1,19 +1,22 @@
-import CategoryProvider from './CategoryContext'
-import ProductsProvider from './ProductsContext'
-import PreferenceProvider from './PreferenceContext'
+import CategoryProvider from "./CategoryContext";
+import ProductsProvider from "./ProductsContext";
+import PreferenceProvider from "./PreferenceContext";
+import CartProvider from "./CartContext";
 
-const ContextBundle = ({children}) => {
-    return ( 
-        <>
-        <CategoryProvider>
-            <ProductsProvider>
-                <PreferenceProvider>
-                    {children}
-                </PreferenceProvider>
-            </ProductsProvider>
-        </CategoryProvider>
-        </>
-     );
-}
- 
+const ContextBundle = ({ children }) => {
+  return (
+    <>
+      <CategoryProvider>
+        <ProductsProvider>
+          <PreferenceProvider>
+            <CartProvider>
+                {children}
+            </CartProvider>
+          </PreferenceProvider>
+        </ProductsProvider>
+      </CategoryProvider>
+    </>
+  );
+};
+
 export default ContextBundle;

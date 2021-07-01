@@ -8,26 +8,21 @@ import Failure from "./pages/Failure";
 
 import ContextBundle from "./context";
 
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
       <ContextBundle>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/order" component={Order} />
-            <Route
-              path="/success"
-              component={Success}
-            />
-            <Route
-              path="/pending"
-              component={Pending}
-            />
-            <Route
-              path="/failure"
-              component={Failure}
-            />
+            <Header>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/order" component={Order} />
+              <Route path="/success" component={Success} />
+              <Route path="/pending" component={Pending} />
+              <Route path="/failure" component={Failure} />
+            </Header>
           </Switch>
         </Router>
       </ContextBundle>

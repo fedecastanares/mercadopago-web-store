@@ -3,7 +3,7 @@
 const Pending = () => {
     return ( 
         <>
-        <h1>Pending</h1>
+        <h1>Pago pendiente</h1>
         </>
      );
 }

@@ -13,8 +13,6 @@ const Header = ({ children }) => {
   const { cart } = useCart();
   const { setPreference } = usePreference();
 
-  console.log(process.env.REACT_APP_BASE_URL);
-
   const handleClick = () => {
     
     const _mercadoLibre = new MercadoLibre();

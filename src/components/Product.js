@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 240,
     height: 240,
     objectFit: "contain",
+    margin: 'auto'
   },
   title: {
     height: "5rem",

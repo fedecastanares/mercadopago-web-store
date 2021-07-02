@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 import { Typography, Grid } from "@material-ui/core";
 
 import usePreference from "../hooks/usePreference";
@@ -18,6 +20,12 @@ const Order = () => {
 
   return (
     <>
+      <Helmet>
+        <script
+          src="https://www.mercadopago.com/v2/security.js"
+          view="item"
+        ></script>
+      </Helmet>
       <Grid
         container
         justify="space-evenly"
@@ -28,8 +36,10 @@ const Order = () => {
           <Typography variant='h4' component='h2'>Detalle de la compra</Typography>
           {preference.items && preference.items.map(product => <OrderProduct key={product.id} product={product} />)}
           <br/>
-          <Typography variant='body1'>Paga con:</Typography>
-          <a href={preference.init_point}><img src='https://play-lh.googleusercontent.com/PaPilQswVaCcvWdZ9PACv6TGu6cVPqHjdl6AtSwOJ3x_gNg5QTvu5j5cic6t9mSCuVE' alt='mercadopago' style={{borderRadius: 15, height: 200, width: 'auto'}} /></a>
+          <a href={preference.init_point}>
+            <Typography variant='body1'>Pagar la compra</Typography>
+            <img src='https://play-lh.googleusercontent.com/PaPilQswVaCcvWdZ9PACv6TGu6cVPqHjdl6AtSwOJ3x_gNg5QTvu5j5cic6t9mSCuVE' alt='mercadopago' style={{borderRadius: 15, height: 200, width: 'auto'}} />
+          </a>
         </Grid>
       </Grid>
     </>

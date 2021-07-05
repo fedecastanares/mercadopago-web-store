@@ -8,10 +8,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <script
-          src="https://www.mercadopago.com/v2/security.js"
-          view="home"
-        ></script>
+
       </Helmet>
       <Grid container>
         <Grid item xs={12} md={3} bg={2}>

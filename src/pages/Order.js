@@ -21,10 +21,7 @@ const Order = () => {
   return (
     <>
       <Helmet>
-        <script
-          src="https://www.mercadopago.com/v2/security.js"
-          view="item"
-        ></script>
+        
       </Helmet>
       <Grid
         container

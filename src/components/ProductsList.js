@@ -15,10 +15,11 @@ const Products = () => {
         <Grid item xs={12} sm={6} md={3} bg={2}>
           <Product product={{
               title: "Samsung Galaxy S9",
-              description: "Samsung Galaxy S9",
+              description: "Dispositivo móvil de Tienda e-commerce",
               thumbnail: 'https://d391ci4kxgasl8.cloudfront.net/fit-in/524x480/filters:fill(FFFFFF):quality(90):format(webp)/_img_productos/samsung-galaxy-s20fe-preventa-fit2-foto-lavanda2.jpg',
               price: 45000,
               quantity: 1,
+              id: "1234",
               prices: {
                 prices: [{
                   amount: 45000

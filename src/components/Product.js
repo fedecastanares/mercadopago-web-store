@@ -55,13 +55,13 @@ const Product = ({ product }) => {
       ...cart,
       {
         title: product.title,
-        description: product.title,
+        description: product.description === undefined ? product.title : product.description,
         picture_url: product.thumbnail,
         // category_id: product.category_id,
         unit_price: product.price,
         //currency_id: product.currency_id,
         quantity: 1,
-        // id: product.id
+        id: product.id
       }
     ]);
   };

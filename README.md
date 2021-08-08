@@ -8,9 +8,9 @@ REACT_APP_BASE_URL=https://mercadopago-backend.herokuapp.com
 npm run start
 
 ## Mercado Pago test user
-user: test_user_63274575@testuser.com
+user: test_user_63274575@testuser.com  
 password: mpdevs2021
 
 ## Items
-This app fetch data from my service you can see that in 
+This app fetch data from my service you can see that in  
 https://github.com/fedecastanares/mercadopago-api

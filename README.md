@@ -1,7 +1,7 @@
 ## ENV 
 BASE_URL for fetch items
 
-Can use
+Can use  
 REACT_APP_BASE_URL=https://mercadopago-backend.herokuapp.com
 
 ## Run
